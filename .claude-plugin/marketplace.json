@@ -1,12 +1,12 @@
 {
-  "name": "the-startup",
+  "name": "agentic-studio",
   "owner": {
-    "name": "Rudolf S."
+    "name": "Kyle Capelli"
   },
   "metadata": {
     "description": "Comprehensive agentic framework for Claude Code",
     "version": "3.2.1",
-    "homepage": "https://github.com/rsmdt/the-startup"
+    "homepage": "https://github.com/KyleCapelli/the-startup"
   },
   "plugins": [
     {

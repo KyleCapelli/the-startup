@@ -99,8 +99,8 @@ claude plugin install ./plugins/team
 ./install.sh
 
 # Uninstall to reset
-claude plugin uninstall start@the-startup
-claude plugin uninstall team@the-startup
+claude plugin uninstall start@agentic-studio
+claude plugin uninstall team@agentic-studio
 ```
 
 ### Editing Skills
@@ -175,4 +175,4 @@ Optional `CONSTITUTION.md` at project root defines checkable rules:
 The repository is a Claude Code marketplace. Publishing happens via:
 1. Push to `main` branch
 2. GitHub Actions workflow creates release
-3. Users install via `/plugin marketplace add rsmdt/the-startup`
+3. Users install via `/plugin marketplace add KyleCapelli/the-startup`

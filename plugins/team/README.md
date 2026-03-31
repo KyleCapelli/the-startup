@@ -1,4 +1,4 @@
-# Team Plugin - The Agentic Startup
+# Team Plugin - Agentic Studio
 
 **Specialized agent library for Claude Code with consolidated, high-signal activities for software delivery.**
 
@@ -9,7 +9,7 @@ The `team` plugin provides **8 specialized roles**, **15 activity-based agents**
 ## Installation
 
 ```bash
-/plugin install team@the-startup
+/plugin install team@agentic-studio
 ```
 
 ---

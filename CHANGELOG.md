@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to The Agentic Startup will be documented in this file.
+All notable changes to Agentic Studio will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - **BREAKING:** Complete migration from npm CLI package to Claude Code plugin architecture
-- Installation now uses `/plugin install` instead of `npx the-agentic-startup install`
+- Installation now uses `/plugin install` instead of `npx agentic-studio install`
 - Removed Ink-based TUI installer (no longer needed with plugin system)
 - Simplified installation process - one command installs everything
 
@@ -52,13 +52,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 1. Uninstall npm package:
    ```bash
-   npx the-agentic-startup uninstall
-   npm uninstall -g the-agentic-startup
+   npx agentic-studio uninstall
+   npm uninstall -g agentic-studio
    ```
 
 2. Install plugin:
    ```bash
-   /plugin install irudiperera/the-startup
+   /plugin install KyleCapelli/the-startup
    ```
 
 3. Output style (manual installation):
@@ -104,5 +104,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-[2.0.0]: https://github.com/irudiperera/the-startup/compare/v1.0.0...v2.0.0
-[1.0.0]: https://github.com/irudiperera/the-startup/releases/tag/v1.0.0
+[2.0.0]: https://github.com/KyleCapelli/the-startup/compare/v1.0.0...v2.0.0
+[1.0.0]: https://github.com/KyleCapelli/the-startup/releases/tag/v1.0.0
