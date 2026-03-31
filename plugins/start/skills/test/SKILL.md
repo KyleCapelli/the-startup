@@ -129,6 +129,35 @@ For each quality command discovered in step 1:
 2. If it passes: continue.
 3. If it fails: fix issues in files you touched, re-run to verify.
 
+### 5b. Visual Verification (Optional)
+
+match (changes include UI files: *.tsx, *.jsx, *.vue, *.svelte, *.html, *.css) {
+  true  => AskUserQuestion:
+             "Run visual verification" — visually check the UI with Playwright
+             "Skip visual checks" — proceed to report
+  false => skip (no UI changes detected)
+}
+
+When visual verification runs, select the right mode:
+
+match (context) {
+  spec available (called from /implement or spec ID known) => {
+    Run Skill(start:visual-verify verify {spec-id}) — check the feature against spec requirements.
+    This is E2E feature verification: does what we built actually look right?
+  }
+  baselines exist in `.visual-baselines/` => {
+    Run Skill(start:visual-verify compare) — diff current state against baselines.
+    This is regression checking: did our changes break existing pages?
+  }
+  neither spec nor baselines => {
+    Run Skill(start:visual-verify explore) — exploratory testing on affected routes.
+    This is discovery: capture what the UI looks like and flag anomalies.
+  }
+}
+
+Visual findings are informational — they do not block the test suite from passing.
+After successful verification, offer to capture baselines for future regression runs.
+
 ### 6. Report
 
 Read reference/output-format.md and present final report accordingly.
@@ -140,5 +169,6 @@ Called by other workflow skills:
 - After `/start:refactor` — verify refactoring preserved behavior
 - After `/start:debug` — verify fix resolved the issue without regressions
 - Before `/start:review` — ensure clean test suite before review
+- Calls `/start:visual-verify` — optional visual regression check when UI files change
 
 When called by another skill, skip step 1 if test infrastructure was already identified.

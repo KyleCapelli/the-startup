@@ -63,12 +63,13 @@ State {
 Determine validation mode from $ARGUMENTS:
 
 match (target) {
-  /^\d{3}/               => Spec Validation
-  file path              => File Validation
-  "drift" | "check drift" => Drift Detection
-  "constitution"         => Constitution Validation
-  "$X against $Y"        => Comparison Validation
-  freeform text          => Understanding Validation
+  /^\d{3}/                          => Spec Validation
+  file path                         => File Validation
+  "drift" | "check drift"          => Drift Detection
+  "constitution"                    => Constitution Validation
+  "visual" | "screenshots"         => Visual Validation (delegates to Skill(start:visual-verify compare))
+  "$X against $Y"                   => Comparison Validation
+  freeform text                     => Understanding Validation
 }
 
 ### 2. Gather Context

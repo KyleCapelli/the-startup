@@ -91,6 +91,20 @@ Perspective definitions, activation rules, and detailed focus areas for the vali
 
 **Techniques**: Pattern rules (regex matching), check rules (semantic LLM analysis), scope-based file filtering. See `constitution-validation.md` for rule schema, parsing, and execution.
 
+### 👁️ Visual
+
+**Intent**: Verify UI implementation matches expected visual state by comparing screenshots against baselines.
+
+**Activation**: Only when `.visual-baselines/` directory exists AND validation target includes UI files or user explicitly requests `/validate visual`.
+
+**What to validate**:
+- Current rendered UI matches baseline screenshots within threshold
+- No unintended layout shifts, overflow, or element misalignment
+- Responsive behavior consistent across captured viewports
+- New routes have baselines captured
+
+**Techniques**: Delegates to Skill(start:visual-verify compare). Findings map to standard Finding interface with severity based on pixel diff percentage (< 1% = LOW, 1-5% = MEDIUM, > 5% = HIGH).
+
 ---
 
 ## Perspective Selection by Validation Mode
@@ -101,8 +115,11 @@ Perspective definitions, activation rules, and detailed focus areas for the vali
 | **File Validation** | ✅ Completeness, 🔗 Consistency, 📍 Alignment |
 | **Drift Detection** | 📊 Drift, 📍 Alignment, 🔗 Consistency |
 | **Constitution** | 📜 Constitution |
+| **Visual** | 👁️ Visual (delegates to Skill(start:visual-verify compare)) |
 | **Comparison** | 📍 Alignment, 🔗 Consistency, 📐 Coverage |
 | **Understanding** | 📍 Alignment, ✅ Completeness |
+
+---
 
 ## Conditional Perspectives
 
@@ -111,3 +128,4 @@ Perspective definitions, activation rules, and detailed focus areas for the vali
 | CONSTITUTION.md exists | +📜 Constitution |
 | Spec + implementation both available | +📊 Drift |
 | Specification documents only | +Ambiguity scoring (see `ambiguity-detection.md`) |
+| `.visual-baselines/` exists + UI files in scope | +👁️ Visual (via Skill(start:visual-verify compare)) |

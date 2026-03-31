@@ -75,6 +75,7 @@ match (changes) {
   dependency file changes             => +Dependencies
   public API | schema changes         => +Compatibility
   frontend component changes          => +Accessibility
+  frontend changes + .visual-baselines/ exists => +Visual Regression (via Skill(start:visual-verify compare))
   CONSTITUTION.md exists              => +Constitution
 }
 
