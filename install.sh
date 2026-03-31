@@ -1,9 +1,9 @@
 #!/bin/sh
-# The Agentic Startup - Installation Script
-# https://github.com/rsmdt/the-startup
+# Agentic Studio - Installation Script
+# https://github.com/KyleCapelli/the-startup
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/rsmdt/the-startup/main/install.sh | sh
+#   curl -fsSL https://raw.githubusercontent.com/KyleCapelli/the-startup/main/install.sh | sh
 #   ./install.sh [--help]
 
 set -e
@@ -12,11 +12,11 @@ set -e
 # Configuration
 # -----------------------------------------------------------------------------
 
-MARKETPLACE="rsmdt/the-startup"
-PLUGINS="team@the-startup start@the-startup"
-STATUSLINE_URL="https://raw.githubusercontent.com/rsmdt/the-startup/main/scripts/statusline.sh"
-CONFIG_URL="https://raw.githubusercontent.com/rsmdt/the-startup/main/scripts/statusline.toml"
-STATUSLINE_DIR="$HOME/.config/the-agentic-startup"
+MARKETPLACE="KyleCapelli/the-startup"
+PLUGINS="team@agentic-studio start@agentic-studio"
+STATUSLINE_URL="https://raw.githubusercontent.com/KyleCapelli/the-startup/main/scripts/statusline.sh"
+CONFIG_URL="https://raw.githubusercontent.com/KyleCapelli/the-startup/main/scripts/statusline.toml"
+STATUSLINE_DIR="$HOME/.config/agentic-studio"
 STATUSLINE_PATH="$STATUSLINE_DIR/statusline.sh"
 CONFIG_PATH="$STATUSLINE_DIR/statusline.toml"
 SETTINGS_FILE="$HOME/.claude/settings.json"
@@ -293,7 +293,7 @@ main() {
   fi
 
   printf "\n"
-  printf "${DIM}Learn more: https://github.com/rsmdt/the-startup${RESET}\n"
+  printf "${DIM}Learn more: https://github.com/KyleCapelli/the-startup${RESET}\n"
 }
 
 main "$@"

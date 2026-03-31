@@ -2,7 +2,7 @@
 #
 # Statusline script for Claude Code
 #
-# Configuration: ~/.config/the-agentic-startup/statusline.toml
+# Configuration: ~/.config/agentic-studio/statusline.toml
 #
 # Format placeholders:
 #   <path>    - Directory path (abbreviated)
@@ -34,7 +34,7 @@ readonly STYLE_RESET="\033[0m"
 
 readonly BRAILLE_CHARS=("⠀" "⡀" "⡄" "⡆" "⡇" "⣇" "⣧" "⣷" "⣿")
 
-readonly CONFIG_DIR="$HOME/.config/the-agentic-startup"
+readonly CONFIG_DIR="$HOME/.config/agentic-studio"
 readonly CONFIG_FILE="$CONFIG_DIR/statusline.toml"
 readonly CLAUDE_SETTINGS="$HOME/.claude/settings.json"
 

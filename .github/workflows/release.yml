@@ -132,7 +132,7 @@ jobs:
             release/the-startup-*
             release/checksums.txt
           body: |
-            ## 🚀 The Agentic Startup ${{ github.event.inputs.version || github.ref_name }}
+            ## 🚀 Agentic Studio ${{ github.event.inputs.version || github.ref_name }}
 
             **Plugin Version**: ${{ steps.version.outputs.plugin_version }}
 
@@ -140,14 +140,14 @@ jobs:
 
             #### Via Claude Code Marketplace (Recommended)
             ```bash
-            # Add The Agentic Startup marketplace
-            /plugin marketplace add rsmdt/the-startup
+            # Add Agentic Studio marketplace
+            /plugin marketplace add KyleCapelli/the-startup
 
             # Install the Start plugin (core workflows)
-            /plugin install start@the-startup
+            /plugin install start@agentic-studio
 
             # (Optional) Install the Team plugin (specialized agents)
-            /plugin install team@the-startup
+            /plugin install team@agentic-studio
             ```
 
             #### Manual Installation
@@ -159,12 +159,12 @@ jobs:
 
             ### What's Included
 
-            - **start@the-startup** - Core workflow commands and productivity tools
-            - **team@the-startup** - Specialized agent team (optional)
+            - **start@agentic-studio** - Core workflow commands and productivity tools
+            - **team@agentic-studio** - Specialized agent team (optional)
 
             ### Changes
 
-            See [CHANGELOG.md](https://github.com/rsmdt/the-startup/blob/main/CHANGELOG.md) for detailed changes.
+            See [CHANGELOG.md](https://github.com/KyleCapelli/the-startup/blob/main/CHANGELOG.md) for detailed changes.
 
             ### Checksums
 

@@ -1,22 +1,22 @@
 <p align="center">
-  <img src="https://github.com/rsmdt/the-startup/blob/main/logo.png" width="400" alt="The Agentic Startup">
+  <img src="https://github.com/KyleCapelli/the-startup/blob/main/logo.png" width="400" alt="Agentic Studio">
 </p>
 
 <p align="center">
-  Ship faster. Ship better. Ship with <b>The Agentic Startup</b>.
+  Ship faster. Ship better. Ship with <b>Agentic Studio</b>.
 </p>
 
 <p align="center">
-  <a href="https://github.com/rsmdt/the-startup/releases/latest">
-    <img alt="Release" src="https://github.com/rsmdt/the-startup/actions/workflows/release.yml/badge.svg" />
+  <a href="https://github.com/KyleCapelli/the-startup/releases/latest">
+    <img alt="Release" src="https://github.com/KyleCapelli/the-startup/actions/workflows/release.yml/badge.svg" />
   </a>
 
-  <a href="https://github.com/rsmdt/the-startup/releases">
-    <img alt="Downloads" src="https://img.shields.io/github/downloads/rsmdt/the-startup/total?style=flat&label=downloads&color=blue" />
+  <a href="https://github.com/KyleCapelli/the-startup/releases">
+    <img alt="Downloads" src="https://img.shields.io/github/downloads/KyleCapelli/the-startup/total?style=flat&label=downloads&color=blue" />
   </a>
 
-  <a href="https://github.com/rsmdt/the-startup/stargazers">
-    <img alt="GitHub Stars" src="https://img.shields.io/github/stars/rsmdt/the-startup?style=flat&color=yellow" />
+  <a href="https://github.com/KyleCapelli/the-startup/stargazers">
+    <img alt="GitHub Stars" src="https://img.shields.io/github/stars/KyleCapelli/the-startup?style=flat&color=yellow" />
   </a>
 
   <a href="https://github.com/hesreallyhim/awesome-claude-code">
@@ -28,14 +28,14 @@
 
 ## Table of Contents
 
-- [🤖 What is The Agentic Startup?](#-what-is-the-agentic-startup)
+- [🤖 What is Agentic Studio?](#-what-is-agentic-studio)
 - [🚀 Quick Start](#-quick-start)
 - [📖 The Complete Workflow](#-the-complete-workflow)
 - [🎯 Which Skill Should I Use?](#-which-skill-should-i-use)
 - [📦 Plugins](#-plugins)
 - [🎨 Output Styles](#-output-styles)
 - [📊 Statusline](#-statusline)
-- [💡 Why The Agentic Startup?](#-why-the-agentic-startup)
+- [💡 Why Agentic Studio?](#-why-agentic-studio)
 - [🎯 Philosophy](#-philosophy)
 - [📚 Documentation](#-documentation)
 
@@ -45,9 +45,9 @@
 
 ---
 
-## 🤖 What is The Agentic Startup?
+## 🤖 What is Agentic Studio?
 
-**The Agentic Startup** is a multi-agent AI framework that makes Claude Code work like a startup team. Create comprehensive specifications before coding, then execute with parallel specialist agents — expert developers, architects, and engineers working together to turn your ideas into shipped code.
+**Agentic Studio** is a multi-agent AI framework that makes Claude Code work like a startup team. Create comprehensive specifications before coding, then execute with parallel specialist agents — expert developers, architects, and engineers working together to turn your ideas into shipped code.
 
 **10 slash commands across 3 phases.** Specify first, then build with confidence.
 
@@ -62,7 +62,7 @@
 **Requirements:** Claude Code v2.0+ with marketplace support
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/rsmdt/the-startup/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/KyleCapelli/the-startup/main/install.sh | sh
 ```
 
 This installs the core plugins, configures the default output style, and sets up the [statusline](#-statusline) with a customizable config file.
@@ -73,11 +73,11 @@ This installs the core plugins, configures the default output style, and sets up
 Start `claude` and run the following:
 
 ```bash
-# Add The Agentic Startup marketplace
-/plugin marketplace add rsmdt/the-startup
+# Add Agentic Studio marketplace
+/plugin marketplace add KyleCapelli/the-startup
 
-/plugin install start@the-startup  # Install the Start plugin (core workflows)
-/plugin install team@the-startup   # (Optional) Install the Team plugin (specialized agents)
+/plugin install start@agentic-studio  # Install the Start plugin (core workflows)
+/plugin install team@agentic-studio   # (Optional) Install the Team plugin (specialized agents)
 ```
 
 </details>
@@ -113,7 +113,7 @@ That's it! You're now using spec-driven development.
 
 ## 📖 The Complete Workflow
 
-The Agentic Startup follows **spec-driven development**: comprehensive specifications before code, ensuring clarity and reducing rework.
+Agentic Studio follows **spec-driven development**: comprehensive specifications before code, ensuring clarity and reducing rework.
 
 ### All Skills at a Glance
 
@@ -323,9 +323,9 @@ What do you need to do?
 
 ## 📦 Plugins
 
-The Agentic Startup is distributed as **Claude Code marketplace plugins**—native integration with zero manual configuration.
+Agentic Studio is distributed as **Claude Code marketplace plugins**—native integration with zero manual configuration.
 
-### Start Plugin (`start@the-startup`)
+### Start Plugin (`start@agentic-studio`)
 
 **Core workflow orchestration** — 10 user-invocable skills, 5 autonomous skills, 2 output styles
 
@@ -339,7 +339,7 @@ The Agentic Startup is distributed as **Claude Code marketplace plugins**—nati
 
 **📖 [View detailed skill documentation →](plugins/start/README.md)**
 
-### Team Plugin (`team@the-startup`) — *Optional*
+### Team Plugin (`team@agentic-studio`) — *Optional*
 
 **Specialized agent library** — 8 roles, 20 activity-based agents. Now with experimental [Agent Teams](#agent-teams-experimental--new-in-v3) support for multi-agent collaboration.
 
@@ -401,7 +401,7 @@ The Start plugin includes two output styles that change how Claude communicates 
 
 ## 🔧 How Skills Work
 
-The Agentic Startup is built on Claude Code's [skills system](https://code.claude.com/docs/en/skills), which follows the [Agent Skills](https://agentskills.io) open standard. Understanding how skills are invoked helps you get the most out of the framework.
+Agentic Studio is built on Claude Code's [skills system](https://code.claude.com/docs/en/skills), which follows the [Agent Skills](https://agentskills.io) open standard. Understanding how skills are invoked helps you get the most out of the framework.
 
 ### Invocation Model
 
@@ -466,7 +466,7 @@ Both context usage and cost display color-coded warnings:
 
 ### Configuration
 
-The statusline reads from `~/.config/the-agentic-startup/statusline.toml`:
+The statusline reads from `~/.config/agentic-studio/statusline.toml`:
 
 ```toml
 # Format string (customize what's displayed)
@@ -515,7 +515,7 @@ format = "<context>  <session>"
 
 ---
 
-## 💡 Why The Agentic Startup?
+## 💡 Why Agentic Studio?
 
 Real workflow features that solve real problems — not just another AI wrapper.
 
@@ -573,7 +573,7 @@ Enable multi-agent collaboration where specialized agents coordinate autonomousl
 
 ## 🎯 Philosophy
 
-Research shows **2-22% accuracy improvement** with specialized task agents vs. single broad agents ([Multi-Agent Collaboration, 2025](https://arxiv.org/html/2501.06322v1)). Leading frameworks organize agents by **capability**, not job titles. The Agentic Startup applies this research through activity-based specialization.
+Research shows **2-22% accuracy improvement** with specialized task agents vs. single broad agents ([Multi-Agent Collaboration, 2025](https://arxiv.org/html/2501.06322v1)). Leading frameworks organize agents by **capability**, not job titles. Agentic Studio applies this research through activity-based specialization.
 
 ### The Problem We Solve
 

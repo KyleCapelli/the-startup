@@ -3,10 +3,10 @@
   "version": "3.2.1",
   "description": "Workflow orchestration commands for agentic software development",
   "author": {
-    "name": "Rudolf S."
+    "name": "Kyle Capelli"
   },
-  "homepage": "https://github.com/rsmdt/the-startup",
-  "repository": "https://github.com/rsmdt/the-startup",
+  "homepage": "https://github.com/KyleCapelli/the-startup",
+  "repository": "https://github.com/KyleCapelli/the-startup",
   "license": "MIT",
   "keywords": [
     "workflow",

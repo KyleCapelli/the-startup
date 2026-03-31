@@ -1,4 +1,4 @@
-# Start Plugin - The Agentic Startup
+# Start Plugin - Agentic Studio
 
 **Workflow orchestration plugin for spec-driven development in Claude Code.**
 
@@ -548,15 +548,15 @@ flowchart TD
 
 ### Installation
 
-Install The Agentic Startup framework using the one-line installer:
+Install Agentic Studio framework using the one-line installer:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/rsmdt/the-startup/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/KyleCapelli/the-startup/main/install.sh | sh
 ```
 
 **What it does:**
-- Adds the `rsmdt/the-startup` marketplace
-- Installs `team@the-startup` and `start@the-startup` plugins
+- Adds the `KyleCapelli/the-startup` marketplace
+- Installs `team@agentic-studio` and `start@agentic-studio` plugins
 - Configures `start:The Startup` as the default output style
 - Optionally installs the git-aware statusline
 
