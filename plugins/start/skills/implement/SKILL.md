@@ -158,8 +158,13 @@ Review handling: APPROVED → next task | Spec violation → must fix | Revision
 
 1. Run Skill(start:validate) drift check for spec alignment.
 2. Run Skill(start:validate) constitution check if CONSTITUTION.md exists.
-3. Verify all phase tasks are complete.
-4. Mark phase status as completed (call step 6).
+3. If phase changed UI files (*.tsx, *.jsx, *.vue, *.svelte, *.html, *.css):
+   - Run Skill(start:visual-verify verify {spec-id}) to check the implemented feature visually against the spec. Pass the current spec ID so the skill can read requirements and solution docs.
+   - If baselines also exist in `.visual-baselines/`, additionally run Skill(start:visual-verify compare) to catch regressions on existing pages.
+   - Visual findings are advisory — they do not block phase completion, but are surfaced in the phase summary.
+   - If verification passes, offer to save screenshots as baselines for future regression checks.
+4. Verify all phase tasks are complete.
+5. Mark phase status as completed (call step 6).
 
 Drift types: Scope Creep, Missing, Contradicts, Extra.
 When drift is detected: AskUserQuestion — Acknowledge | Update impl | Update spec | Defer

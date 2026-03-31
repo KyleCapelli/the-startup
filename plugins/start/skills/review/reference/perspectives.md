@@ -22,4 +22,5 @@ Perspective definitions and activation rules for the review skill.
 | 📦 **Dependencies** | Assess supply chain security | Changes to package.json, requirements.txt, go.mod, Cargo.toml, etc. |
 | 🔄 **Compatibility** | Detect breaking changes | Modifications to public APIs, database schemas, config formats, migration files |
 | ♿ **Accessibility** | Ensure inclusive design | Frontend/UI component changes |
+| 👁️ **Visual Regression** | Catch unintended visual changes | Frontend/UI component changes + `.visual-baselines/` exists |
 | 📜 **Constitution** | Check project rules compliance | Project has CONSTITUTION.md |
