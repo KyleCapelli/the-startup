@@ -129,3 +129,4 @@ Perspective definitions, activation rules, and detailed focus areas for the vali
 | Spec + implementation both available | +📊 Drift |
 | Specification documents only | +Ambiguity scoring (see `ambiguity-detection.md`) |
 | `.visual-baselines/` exists + UI files in scope | +👁️ Visual (via Skill(start:visual-verify compare)) |
+| `MANUAL_TASKS.md` exists in spec directory | +🔧 Manual Tasks (check completeness: every SDD external dependency has an entry, no stale placeholders, all have researched steps) |
