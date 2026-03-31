@@ -65,6 +65,7 @@ State {
 - [Output Format](reference/output-format.md) — Task result guidelines, phase summary, completion summary
 - [Output Example](examples/output-example.md) — Concrete example of expected output format
 - [Perspectives](reference/perspectives.md) — Implementation perspectives and work stream mapping
+- [Manual Tasks](reference/manual-tasks.md) — Detection, documentation, and commit gating for human-required tasks
 
 ## Workflow
 
@@ -152,6 +153,11 @@ match (mode) {
 
 As tasks complete, update task checkboxes in phase-N.md: `- [ ]` → `- [x]`
 
+**Manual task detection:** As agents implement tasks that reference external services, API keys, third-party dashboards, or infrastructure provisioning, read reference/manual-tasks.md for detection signals. For each detected dependency:
+1. Research the exact steps (dashboard URLs, pricing, gotchas, verification commands).
+2. Write or update `{spec}/MANUAL_TASKS.md` with full step-by-step instructions per the format in reference/manual-tasks.md.
+3. Surface the new manual task to the user immediately — don't wait until phase end.
+
 Review handling: APPROVED → next task | Spec violation → must fix | Revision needed → max 3 cycles | After 3 → escalate to user
 
 ### 5. Validate Phase
@@ -163,8 +169,20 @@ Review handling: APPROVED → next task | Spec violation → must fix | Revision
    - If baselines also exist in `.visual-baselines/`, additionally run Skill(start:visual-verify compare) to catch regressions on existing pages.
    - Visual findings are advisory — they do not block phase completion, but are surfaced in the phase summary.
    - If verification passes, offer to save screenshots as baselines for future regression checks.
-4. Verify all phase tasks are complete.
-5. Mark phase status as completed (call step 6).
+4. **Manual task gate** — read reference/manual-tasks.md for the gate protocol. Check `{spec}/MANUAL_TASKS.md`:
+
+match (manual tasks) {
+  file not found             => continue (no manual tasks for this spec)
+  all tasks [x] or [~]      => continue (all complete or deferred)
+  has [ ] pending tasks      => BLOCK — present pending tasks to user
+    AskUserQuestion:
+      "I've completed them" — walk through each pending task, confirm, mark [x], update file
+      "Show me the steps" — display detailed instructions for pending tasks
+      "Defer" — requires justification, mark [~] with reason and date, log in file
+}
+
+5. Verify all phase tasks are complete.
+6. Mark phase status as completed (call step 6).
 
 Drift types: Scope Creep, Missing, Contradicts, Extra.
 When drift is detected: AskUserQuestion — Acknowledge | Update impl | Update spec | Defer
@@ -181,7 +199,18 @@ AskUserQuestion: Continue to next phase | Review output | Pause | Address issues
 ### 7. Complete
 
 1. Run Skill(start:validate) for final validation (comparison mode).
-2. Read reference/output-format.md and present completion summary accordingly.
+2. **Final manual task gate** — re-check `{spec}/MANUAL_TASKS.md` before offering to commit:
+
+match (manual tasks) {
+  all [x] or [~]     => update frontmatter `status: complete`, continue
+  has [ ] pending     => BLOCK — "Cannot commit with pending manual tasks."
+    AskUserQuestion:
+      "I've completed them" — confirm each, mark [x], update file, proceed
+      "Show me the steps" — display instructions
+      "Defer all remaining" — mark [~] with justification, proceed
+}
+
+3. Read reference/output-format.md and present completion summary accordingly.
 
 match (git integration) {
   active => AskUserQuestion: Commit + PR | Commit only | Skip

@@ -82,6 +82,12 @@ Read template from template.md.
 Write template to specDirectory/plan/README.md.
 Identify implementation areas from SDD components.
 
+**Scan for manual tasks:** Read the SDD for external dependencies — API integrations, third-party services, infrastructure requirements, OAuth providers, DNS configuration, etc. For each detected dependency that requires human action:
+1. Create `{specDirectory}/MANUAL_TASKS.md` if it doesn't exist.
+2. Add a preliminary entry with category, "Required by" phase/task reference, and placeholder steps.
+3. Note: "Detailed steps will be researched during implementation."
+4. Surface the manual tasks to the user: "{N} manual tasks identified that will need human action before commit."
+
 ### 2. Discover Tasks
 
 Launch parallel specialist agents to investigate:

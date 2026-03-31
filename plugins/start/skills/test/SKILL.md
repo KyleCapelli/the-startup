@@ -117,10 +117,16 @@ match (results) {
 
 For each failure:
 1. Read reference/failure-investigation.md and categorize the failure.
-2. Apply minimal fix.
-3. Re-run specific test to verify.
-4. Re-run full suite to confirm no regressions.
-5. If fixing one test breaks another: find the root cause, do not give up.
+2. **Check for manual task dependency** — if the failure is a credential error, connection refused, missing API key, or external service timeout:
+   - Search for `MANUAL_TASKS.md` in `.start/specs/*/` to find pending manual tasks.
+   - If a pending manual task maps to this failure, surface the connection:
+     "Test `{file}:{line}` failed — this requires Manual Task #{N} ({title}) to be completed first."
+   - Do NOT attempt to fix credential/external-service failures by mocking or stubbing — the human must complete the manual task.
+   - AskUserQuestion: "Show manual task steps" | "Skip this test (manual task pending)" | "I've completed it — re-run"
+3. Apply minimal fix (for non-manual-task failures).
+4. Re-run specific test to verify.
+5. Re-run full suite to confirm no regressions.
+6. If fixing one test breaks another: find the root cause, do not give up.
 
 ### 5. Run Quality Checks
 
